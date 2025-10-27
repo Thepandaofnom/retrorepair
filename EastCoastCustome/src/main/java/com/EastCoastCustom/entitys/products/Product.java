@@ -1,0 +1,67 @@
+package eccc;
+
+import java.util.Objects;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
+class Product {
+    private @Id
+    @GeneratedValue Long id;
+    
+    private String name;
+
+    private double price;
+
+    Product() {}
+
+    Product(String name, double price){
+        this.name = name;
+        this.price = price;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getPrice() {
+        return this.price;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof Product))
+            return false;
+        Product product = (Product) o;
+        return Objects.equals(this.id, product.id) && Objects.equals(this.name, product.name) && Objects.equals(this.price, product.price);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.id, this.name, this.price);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "id=" + this.id + ", name'" + this.name + '\'' + ", price='" + this.price + '\'' + '}';
+    }
+}

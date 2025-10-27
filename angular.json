@@ -22,7 +22,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/primeicons/primeicons.css"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -58,6 +59,7 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
+              "baseHref": "/retrorepair/",
               "buildTarget": "retrorepair:build:production"
             },
             "development": {
@@ -80,7 +82,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/primeicons/primeicons.css"
             ]
           }
         }
